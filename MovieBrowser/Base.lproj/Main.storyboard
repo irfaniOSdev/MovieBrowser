@@ -26,9 +26,11 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="WHj-zK-Dqx"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="Sw0-GR-rcZ">
+                            <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="Sw0-GR-rcZ">
                                 <rect key="frame" x="0.0" y="622" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="4eH-TQ-wnU"/>
+                                </constraints>
                                 <offsetWrapper key="searchTextPositionAdjustment" horizontal="125" vertical="0.0"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </searchBar>
@@ -36,8 +38,11 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ImW-WL-mSn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4JR-uc-l8B"/>
+                            <constraint firstItem="Sw0-GR-rcZ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="6xt-GF-PgH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Sw0-GR-rcZ" secondAttribute="bottom" constant="1" id="8LF-vd-wtY"/>
                             <constraint firstItem="ImW-WL-mSn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="60" id="GPq-Of-uAP"/>
                             <constraint firstItem="ImW-WL-mSn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="eha-8e-pOl"/>
+                            <constraint firstItem="Sw0-GR-rcZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fZ2-KE-a2d"/>
                             <constraint firstItem="ImW-WL-mSn" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-7" id="o1i-Us-eJQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -71,11 +76,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="368"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wideplaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="rwP-mv-n6a">
-                                                    <rect key="frame" x="0.0" y="0.0" width="667" height="263"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="rwP-mv-n6a">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="263"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Captain America: Civil War" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1d-zd-eCB">
-                                                    <rect key="frame" x="33" y="274" width="599" height="44"/>
+                                                    <rect key="frame" x="33" y="274" width="307" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="4oA-KX-dZx"/>
                                                     </constraints>
@@ -84,7 +89,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vHa-Ml-vPl">
-                                                    <rect key="frame" x="33" y="320" width="599" height="44"/>
+                                                    <rect key="frame" x="33" y="320" width="307" height="44"/>
                                                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="dDg-tC-tUf"/>
@@ -97,10 +102,6 @@
                                                         <action selector="trailerTapped:" destination="ZiF-9Y-rHA" eventType="touchUpInside" id="bPQ-w0-TnA"/>
                                                     </connections>
                                                 </button>
-                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gdf-93-sh1">
-                                                    <rect key="frame" x="132" y="84" width="110" height="200"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </stackView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="vHa-Ml-vPl" secondAttribute="bottom" constant="-7" id="0Ar-LN-zSx"/>
@@ -114,16 +115,6 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="b1d-zd-eCB" secondAttribute="trailing" constant="20" id="vxP-2s-eZR"/>
                                                 <constraint firstItem="vHa-Ml-vPl" firstAttribute="top" secondItem="b1d-zd-eCB" secondAttribute="bottom" constant="2" id="xgB-NU-Mnf"/>
                                             </constraints>
-                                            <variation key="default">
-                                                <mask key="subviews">
-                                                    <exclude reference="gdf-93-sh1"/>
-                                                </mask>
-                                            </variation>
-                                            <variation key="heightClass=regular">
-                                                <mask key="subviews">
-                                                    <include reference="gdf-93-sh1"/>
-                                                </mask>
-                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="coverImage" destination="rwP-mv-n6a" id="y4N-pE-XFw"/>
@@ -282,6 +273,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="wideplaceholder" width="320" height="120"/>
+        <image name="placeholder" width="320" height="120"/>
     </resources>
 </document>
