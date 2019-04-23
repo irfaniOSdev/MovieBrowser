@@ -7,3 +7,7 @@ Follwing resources are being used.
 https://developers.themoviedb.org/
 https://github.com/0xced/XCDYouTubeKit
 https://github.com/bignerdranch/Freddy
+
+Requirements:-
+Swift 4 
+Xcode 10
